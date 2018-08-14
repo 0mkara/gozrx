@@ -1,0 +1,5 @@
+package: github.com/0mkara/gozrx
+import:
+- package: github.com/ethereum/go-ethereum
+  subpackages:
+  - ethclient
