@@ -22,6 +22,14 @@ func main() {
 		log.Fatalf("could not get token addresses: %v", err)
 	}
 	for _, addr := range tokenAddrs {
-		fmt.Println("Token addresse:", addr.Hex())
+		fmt.Println("Token address:", addr.Hex())
+		// Print token info
+		tkn, err := zerox.Tokens(nil, addr)
+		if err != nil {
+			log.Fatalf("could not get token info: %v", err)
+		}
+		fmt.Println("Name:", tkn.Name)
+		fmt.Println("Symbol:", tkn.Symbol)
+		fmt.Println("Decimals:", tkn.Decimals)
 	}
 }
